@@ -1,4 +1,5 @@
-@import '../../node_modules/bulma/bulma.sass';
+// @import '../../node_modules/bulma/bulma.sass';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 $container-w: 320px;
 $container-h: 409px;
@@ -7,6 +8,10 @@ $naranjo: #ff9300;
 $calipso: #00bfd6;
 $celeste: #A3ECF3;
 $blanco: #FFF;
+$rojo: #FF535B;
+$menu-w: 89px;
+$menu-h: 810px;
+$azul : #50557F;
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -15,6 +20,10 @@ $blanco: #FFF;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.app {
+
 }
 
 body {
@@ -31,7 +40,26 @@ body {
   margin-right: 2em;
   border: 0px;
   font-weight: 700;
+}
 
+.box-pelis {
+  margin: 40px 30px;
+  display:flex;
+}
+
+.box-pelis .cards p{
+  opacity: .75;
+  background-color: $rojo;
+  color: white;
+  font-size: 1.2em;
+}
+
+.box-pelis .cards p:last-child {
+  font-size: .95em;
+}
+
+.box-pelis .cards img{
+  width:100%;
 }
 
 .label-field {
@@ -61,9 +89,62 @@ body {
   margin-bottom: .8em;
 }
 
+.title {
+  color: $azul;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
 .main {
   width:$container-w;
   height:$container-h;
   margin: 0 auto;
   box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+}
+
+.main-content {
+  display:flex;
+}
+
+.menu {
+  background-color: $rojo;
+  height: $menu-h;
+  padding: 10px 5px;
+}
+
+.menu ul {
+  padding:0;
+  margin: 2em 0;
+}
+
+.menu ul li {
+  list-style: none;
+  text-align: center;
+}
+
+.menu ul li:last-child {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  text-align:center;
+}
+.menu ul li a{
+  text-decoration: none;
+}
+.menu ul li a svg, .menu ul li a p, {
+  color: white;
+}
+.menu ul li a svg {
+  font-size: 1.5em;
+}
+.navbar {
+  box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+}
+
+.content-search {
+
+}
+
+.user-menu {
 }
