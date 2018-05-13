@@ -26,6 +26,10 @@ $azul : #50557F;
 
 }
 
+a {
+  color: white;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -140,6 +144,10 @@ body {
 }
 .navbar {
   box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.75);
+}
+
+.results {
+  margin-top: 25px;
 }
 
 .content-search {
