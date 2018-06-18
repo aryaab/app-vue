@@ -10,6 +10,15 @@
 		.body
 			.container.text-center 
 				h1.title Platzi Music
-				h2.subtitle Canciones que están Vue.nisimas
+				h2.subtitle Canciones que están Vue-nisimas
+				nd-player
 
 </template>
+
+<script>
+import ndPlayer from '@/components/player.vue'
+
+export default {
+  components: { ndPlayer }
+}
+</script>

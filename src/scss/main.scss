@@ -66,6 +66,25 @@ body {
   width:100%;
 }
 
+.img-thumbnail {
+  width: 200px;
+  margin: 0 auto;
+  img {
+    width:100%;
+  }
+}
+
+.is-active {
+  border: 3px solid #23d160;
+}
+
+.notification {
+  margin: 10px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .label-field {
   color: $naranjo;
   font-size: .85em;
@@ -95,7 +114,7 @@ body {
 
 .title {
   color: $azul;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 1em;
   font-weight: 600;
 }
