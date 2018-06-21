@@ -1,5 +1,5 @@
 <template lang="pug">
-  .card
+  .card(v-if="track && track.album")
     .card-image
       figure.img-thumbnail
         img(:src="track.album.images[0].url")
@@ -11,12 +11,12 @@
             strong {{ track.name }}
           p.subtitle.col-md-12.text-center {{ track.artists[0].name}}
       .content
-        small.ml-2 Duración: {{ track.duration_ms }}
+        small.ml-2 Duración: {{ track.duration_ms | ms-to-mm }}
         nav.level
           .level.text-center
-            a.level-item.text-center(:href="track.preview_url" target="_blank") ▶
+            button.btn.primary.level-item.text-center(@click="selectTrack") ▶
           .level.text-center
-            a.level-item.text-center(@click="selectTrack") ▶
+            button.btn.warning.level-item.text-center(@click="goToTrack(track.id)" ) 🌎
 </template>
 
 <script>
@@ -27,9 +27,15 @@
 
 	  methods: {
 	    selectTrack () {
+      if (!this.track.preview_url) { return }
 	      this.$emit('select', this.track.id)
       this.$bus.$emit('set-track', this.track)
-	    }
+	    },
+
+    goToTrack (id) {
+      if (!this.track.preview_url) { return }
+      this.$router.push({ name: 'track', params: { id } })
+    }
 	  }
 	}
 </script>
