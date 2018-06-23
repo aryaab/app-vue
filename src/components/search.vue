@@ -1,9 +1,11 @@
 <template lang="pug">
   main
 
-    nd-notification(v-show="showNotification" v-bind:total="total")
+    transition(name="move")
+      nd-notification(v-show="showNotification" v-bind:total="total")
 
-    nd-loader(v-show="isLoading")
+    transition(name="move")
+      nd-loader(v-show="isLoading")
 
     section.section(v-show="!isLoading")
       nav.nav.has-shadow

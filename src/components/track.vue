@@ -14,29 +14,27 @@
         small.ml-2 Duración: {{ track.duration_ms | ms-to-mm }}
         nav.level
           .level.text-center
-            button.btn.primary.level-item.text-center(@click="selectTrack") ▶
+            button.btn.btn-primary.level-item.text-center(@click="selectTrack") ▶
           .level.text-center
-            button.btn.warning.level-item.text-center(@click="goToTrack(track.id)" ) 🌎
+            button.btn.btn-warning.level-item.text-center(@click="goToTrack(track.id)" ) 🌎
 </template>
 
 <script>
-	export default {
-	  props: {
-	    track: { type: Object, required: true }
-	  },
+  import trackMixin from '@/mixins/track'
 
-	  methods: {
-	    selectTrack () {
-      if (!this.track.preview_url) { return }
-	      this.$emit('select', this.track.id)
-      this.$bus.$emit('set-track', this.track)
-	    },
+  export default {
+    mixins: [ trackMixin ],
+    
+    props: {
+      track: { type: Object, required: true }
+    },
 
-    goToTrack (id) {
-      if (!this.track.preview_url) { return }
-      this.$router.push({ name: 'track', params: { id } })
+    methods: {
+      goToTrack (id) {
+        if (!this.track.preview_url) { return }
+        this.$router.push({ name: 'track', params: { id } })
+      }
     }
-	  }
-	}
+  }
 </script>
 
